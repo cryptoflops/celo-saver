@@ -1,0 +1,110 @@
+
+> @cryptoflops/celo-saver@1.0.0 build
+> next build --webpack
+
+▲ Next.js 16.2.3 (webpack)
+
+  Creating an optimized production build ...
+Failed to compile.
+
+./src/context/index.tsx
+Module not found: Can't resolve './LogContext'
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/components/ClientWrapper.tsx
+
+./node_modules/@coinbase/cdp-sdk/_esm/actions/solana/rpc.js
+Module not found: Can't resolve '@solana/kit'
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./node_modules/@coinbase/cdp-sdk/_esm/actions/solana/transfer.js
+./node_modules/@coinbase/cdp-sdk/_esm/accounts/solana/toSolanaAccount.js
+./node_modules/@coinbase/cdp-sdk/_esm/client/solana/solana.js
+./node_modules/@coinbase/cdp-sdk/_esm/client/cdp.js
+./node_modules/@coinbase/cdp-sdk/_esm/index.js
+./node_modules/@base-org/account/dist/interface/payment/charge.js
+./node_modules/@base-org/account/dist/interface/payment/index.node.js
+./node_modules/@base-org/account/dist/index.node.js
+./node_modules/@reown/appkit-adapter-wagmi/node_modules/@wagmi/connectors/dist/esm/baseAccount.js
+./node_modules/@reown/appkit-adapter-wagmi/node_modules/@wagmi/connectors/dist/esm/exports/index.js
+./node_modules/@reown/appkit-adapter-wagmi/dist/esm/src/utils/helpers.js
+./node_modules/@reown/appkit-adapter-wagmi/dist/esm/src/client.js
+./node_modules/@reown/appkit-adapter-wagmi/dist/esm/src/index.js
+./src/config/index.ts
+./src/context/index.tsx
+./src/components/ClientWrapper.tsx
+
+./node_modules/@coinbase/cdp-sdk/_esm/actions/solana/transfer.js
+Module not found: Can't resolve '@solana/kit'
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./node_modules/@coinbase/cdp-sdk/_esm/accounts/solana/toSolanaAccount.js
+./node_modules/@coinbase/cdp-sdk/_esm/client/solana/solana.js
+./node_modules/@coinbase/cdp-sdk/_esm/client/cdp.js
+./node_modules/@coinbase/cdp-sdk/_esm/index.js
+./node_modules/@base-org/account/dist/interface/payment/charge.js
+./node_modules/@base-org/account/dist/interface/payment/index.node.js
+./node_modules/@base-org/account/dist/index.node.js
+./node_modules/@reown/appkit-adapter-wagmi/node_modules/@wagmi/connectors/dist/esm/baseAccount.js
+./node_modules/@reown/appkit-adapter-wagmi/node_modules/@wagmi/connectors/dist/esm/exports/index.js
+./node_modules/@reown/appkit-adapter-wagmi/dist/esm/src/utils/helpers.js
+./node_modules/@reown/appkit-adapter-wagmi/dist/esm/src/client.js
+./node_modules/@reown/appkit-adapter-wagmi/dist/esm/src/index.js
+./src/config/index.ts
+./src/context/index.tsx
+./src/components/ClientWrapper.tsx
+
+./node_modules/@coinbase/cdp-sdk/_esm/actions/solana/utils.js
+Module not found: Can't resolve '@solana/kit'
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./node_modules/@coinbase/cdp-sdk/_esm/actions/solana/transfer.js
+./node_modules/@coinbase/cdp-sdk/_esm/accounts/solana/toSolanaAccount.js
+./node_modules/@coinbase/cdp-sdk/_esm/client/solana/solana.js
+./node_modules/@coinbase/cdp-sdk/_esm/client/cdp.js
+./node_modules/@coinbase/cdp-sdk/_esm/index.js
+./node_modules/@base-org/account/dist/interface/payment/charge.js
+./node_modules/@base-org/account/dist/interface/payment/index.node.js
+./node_modules/@base-org/account/dist/index.node.js
+./node_modules/@reown/appkit-adapter-wagmi/node_modules/@wagmi/connectors/dist/esm/baseAccount.js
+./node_modules/@reown/appkit-adapter-wagmi/node_modules/@wagmi/connectors/dist/esm/exports/index.js
+./node_modules/@reown/appkit-adapter-wagmi/dist/esm/src/utils/helpers.js
+./node_modules/@reown/appkit-adapter-wagmi/dist/esm/src/client.js
+./node_modules/@reown/appkit-adapter-wagmi/dist/esm/src/index.js
+./src/config/index.ts
+./src/context/index.tsx
+./src/components/ClientWrapper.tsx
+
+./node_modules/@coinbase/cdp-sdk/_esm/auth/hooks/axios/withAuth.js
+Module not found: Can't resolve 'axios'
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./node_modules/@coinbase/cdp-sdk/_esm/auth/hooks/axios/index.js
+./node_modules/@coinbase/cdp-sdk/_esm/openapi-client/cdpApiClient.js
+./node_modules/@coinbase/cdp-sdk/_esm/openapi-client/index.js
+./node_modules/@coinbase/cdp-sdk/_esm/client/cdp.js
+./node_modules/@coinbase/cdp-sdk/_esm/index.js
+./node_modules/@base-org/account/dist/interface/payment/charge.js
+./node_modules/@base-org/account/dist/interface/payment/index.node.js
+./node_modules/@base-org/account/dist/index.node.js
+./node_modules/@reown/appkit-adapter-wagmi/node_modules/@wagmi/connectors/dist/esm/baseAccount.js
+./node_modules/@reown/appkit-adapter-wagmi/node_modules/@wagmi/connectors/dist/esm/exports/index.js
+./node_modules/@reown/appkit-adapter-wagmi/dist/esm/src/utils/helpers.js
+./node_modules/@reown/appkit-adapter-wagmi/dist/esm/src/client.js
+./node_modules/@reown/appkit-adapter-wagmi/dist/esm/src/index.js
+./src/config/index.ts
+./src/context/index.tsx
+./src/components/ClientWrapper.tsx
+
+
+> Build failed because of webpack errors
