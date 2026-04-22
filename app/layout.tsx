@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Manrope, Space_Grotesk } from 'next/font/google';
 import ClientWrapper from '@/components/ClientWrapper';
 import Link from 'next/link';
+import Image from 'next/image';
 import './globals.css';
 
 const manrope = Manrope({ subsets: ['latin'], variable: '--font-manrope' });
@@ -27,7 +28,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         
         <header className="flex justify-between items-center w-full px-6 py-4 bg-surface-container-highest/90 backdrop-blur-xl border-b-2 border-surface-variant z-40 relative md:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
           <div className="flex items-center gap-4">
-            <span className="material-symbols-outlined text-primary-container text-2xl" style={{ fontVariationSettings: "'FILL' 1" }}>account_balance_wallet</span>
+            <Image src="/logo.png" alt="CeloSaver Logo" width={32} height={32} className="rounded-md object-contain" />
             <h1 className="font-headline-md text-headline-md text-primary-container tracking-tighter uppercase font-black">CELOSAVER</h1>
           </div>
           

@@ -1,5 +1,9 @@
 # CeloSaver
 
+<p align="center">
+  <img src="./public/logo.png" height="120" alt="CeloSaver Logo" />
+</p>
+
 CeloSaver is a stablecoin savings application built for Celo MiniPay. It tracks deposits into a vault and maintains on-chain streaks to help users build a consistent savings habit.
 
 ## Features
