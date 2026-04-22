@@ -2,7 +2,7 @@
 
 import { useReadContract, useWriteContract, useWaitForTransactionReceipt, useAccount } from 'wagmi';
 import { parseUnits } from 'viem';
-import { VAULT_ADDRESS, CUSD_ADDRESS, CeloSaverVaultABI, ERC20ABI, CELO_SEPOLIA_CHAIN_ID } from '@/contracts';
+import { VAULT_ADDRESS, CUSD_ADDRESS, CeloSaverVaultABI, ERC20ABI, CELO_CHAIN_ID } from '@/contracts';
 
 // --- Read Hooks ---
 
@@ -14,7 +14,7 @@ export function useUserData() {
     abi: CeloSaverVaultABI,
     functionName: 'users',
     args: address ? [address] : undefined,
-    chainId: CELO_SEPOLIA_CHAIN_ID,
+    chainId: CELO_CHAIN_ID,
     query: { enabled: !!address },
   });
 }
@@ -27,7 +27,7 @@ export function useCusdBalance() {
     abi: ERC20ABI,
     functionName: 'balanceOf',
     args: address ? [address] : undefined,
-    chainId: CELO_SEPOLIA_CHAIN_ID,
+    chainId: CELO_CHAIN_ID,
     query: { enabled: !!address },
   });
 }
@@ -40,7 +40,7 @@ export function useCusdAllowance() {
     abi: ERC20ABI,
     functionName: 'allowance',
     args: address ? [address, VAULT_ADDRESS] : undefined,
-    chainId: CELO_SEPOLIA_CHAIN_ID,
+    chainId: CELO_CHAIN_ID,
     query: { enabled: !!address },
   });
 }
@@ -57,7 +57,7 @@ export function useApproveVault() {
       abi: ERC20ABI,
       functionName: 'approve',
       args: [VAULT_ADDRESS, parseUnits(amount, 18)],
-      chainId: CELO_SEPOLIA_CHAIN_ID,
+      chainId: CELO_CHAIN_ID,
     });
   };
 
@@ -74,7 +74,7 @@ export function useDeposit() {
       abi: CeloSaverVaultABI,
       functionName: 'deposit',
       args: [parseUnits(amount, 18)],
-      chainId: CELO_SEPOLIA_CHAIN_ID,
+      chainId: CELO_CHAIN_ID,
     });
   };
 
@@ -91,7 +91,7 @@ export function useWithdraw() {
       abi: CeloSaverVaultABI,
       functionName: 'withdraw',
       args: [parseUnits(amount, 18)],
-      chainId: CELO_SEPOLIA_CHAIN_ID,
+      chainId: CELO_CHAIN_ID,
     });
   };
 
