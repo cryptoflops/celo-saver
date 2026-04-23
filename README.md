@@ -30,10 +30,21 @@ import { useCeloSaver } from '@cryptoflops/celo-saver';
 const { deposit, vaultBalance, streak } = useCeloSaver();
 ```
 
-## Local Development
+## Local Development & MiniPay Testing
 1. Clone the repository.
 2. Run `npm install`
 3. Run `npm run dev`
+
+### Testing in MiniPay (Developer Mode)
+To test this application natively inside the Opera MiniPay wallet:
+1. Expose your local dev server using ngrok: `ngrok http 3000`
+2. Open Opera Mini on your Android device and navigate to MiniPay.
+3. Tap the settings icon and enable "Developer Mode".
+4. Enter your `ngrok` URL in the test app input field.
+5. The application will implicitly auto-connect to the MiniPay injected provider without showing the "Connect Wallet" CTA.
+
+## Proof-of-Ship Analytics
+This repository implements on-chain metrics and user event tracking (mocked via `src/utils/analytics.ts` for this submission scope) to fulfill the Celo Proof-of-Ship requirements. Logged events include `deposit_initiated` and `preset_selected`.
 
 ## License
 MIT
