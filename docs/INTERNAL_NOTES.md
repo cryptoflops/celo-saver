@@ -4,3 +4,4 @@
 - Tested gas estimations on Celo Alfajores, looks good.
 - Cleaned up some dead code in the utility helpers.
 - Reviewed component tree performance, seems stable.
+- Need to look into optimizing the context providers later.
