@@ -5,3 +5,4 @@
 - Cleaned up some dead code in the utility helpers.
 - Reviewed component tree performance, seems stable.
 - Need to look into optimizing the context providers later.
+- Reviewed component tree performance, seems stable.
