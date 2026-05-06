@@ -7,3 +7,4 @@
 - Need to look into optimizing the context providers later.
 - Reviewed component tree performance, seems stable.
 - Testing new layout constraints for edge cases.
+- Fixed a minor typo in the internal documentation.
