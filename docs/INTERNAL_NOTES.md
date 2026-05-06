@@ -8,3 +8,4 @@
 - Reviewed component tree performance, seems stable.
 - Testing new layout constraints for edge cases.
 - Fixed a minor typo in the internal documentation.
+- Cleaned up some dead code in the utility helpers.
