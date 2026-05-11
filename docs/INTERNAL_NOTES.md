@@ -10,3 +10,4 @@
 - Fixed a minor typo in the internal documentation.
 - Cleaned up some dead code in the utility helpers.
 - Verified backward compatibility with older API responses.
+- Testing new layout constraints for edge cases.
