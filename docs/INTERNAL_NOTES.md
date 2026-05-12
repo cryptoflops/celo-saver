@@ -11,3 +11,4 @@
 - Cleaned up some dead code in the utility helpers.
 - Verified backward compatibility with older API responses.
 - Testing new layout constraints for edge cases.
+- Need to look into optimizing the context providers later.
