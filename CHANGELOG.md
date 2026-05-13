@@ -3,8 +3,8 @@
 ## [Unreleased] - 2026-05-13
 
 ### Changed
-- Updated dependencies to latest stable
-- Added retry logic for failed transactions
+- Improved error handling in contract interactions
+- Reduced bundle size by tree-shaking
 
 ### Fixed
 - Resolved race condition in wallet sync
