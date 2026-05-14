@@ -17,3 +17,4 @@
 - Tested gas estimations on Celo Alfajores, looks good.
 - Reviewed component tree performance, seems stable.
 - Looking into potential race conditions during state hydration.
+- Adjusting padding to align with design specs.
