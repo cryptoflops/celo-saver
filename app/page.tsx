@@ -1,43 +1,37 @@
 'use client';
 
-import { useState } from 'react';
-import AppKitButton from '@/components/AppKitButton';
 import { SUPPORTED_TOKEN } from '@/contracts';
-import { trackEvent } from '@/utils/analytics';
-import { useDeposit, useUserData, useApproveVault } from '@/hooks/useVault';
+import { useUserData } from '@/hooks/useVault';
 import { useAccount } from 'wagmi';
+import AppKitButton from '@/components/AppKitButton';
+import Link from 'next/link';
+import { ArrowRight, Flame, Target, TrendingUp, Wallet } from 'lucide-react';
 
 export default function Home() {
   const { isConnected } = useAccount();
   const { data: userData } = useUserData();
-  const { deposit, isPending: isDepositing, isSuccess: isDepositSuccess } = useDeposit();
-  const { approve, isPending: isApproving } = useApproveVault();
-
-  const [depositAmount, setDepositAmount] = useState<string>('');
 
   const currentStreak = (userData as any[])?.[1] ? Number((userData as any[])[1]) : 0;
   const vaultBalance = (userData as any[])?.[0] ? Number((userData as any[])[0]) / 1e18 : 0;
 
-  const handleDeposit = () => {
-    if (!depositAmount || isNaN(Number(depositAmount))) return;
-    
-    trackEvent('deposit_initiated', { amount: depositAmount, token: SUPPORTED_TOKEN.symbol });
-    
-    // In a real flow, we'd wait for approve success before deposit, 
-    // but for this PoC UX, we can trigger approve first, then deposit.
-    // For simplicity of UI in this demo:
-    deposit(depositAmount);
-  };
-
-  const handlePreset = (amount: string) => {
-    setDepositAmount(amount);
-    trackEvent('preset_selected', { amount });
-  };
+  // Mock savings goal
+  const savingsGoal = 500;
+  const goalProgress = Math.min(100, (vaultBalance / savingsGoal) * 100);
+  
+  // Yield projection (mock 12.4% APY, 1.5x streak multiplier)
+  const currentMultiplier = currentStreak >= 7 ? 1.5 : 1.0;
+  const baseYield = vaultBalance * 0.124;
+  const projectedMonthly = (baseYield * currentMultiplier) / 12;
 
   return (
-    <main className="relative z-10 w-full max-w-7xl mx-auto px-container-padding py-stack-lg flex flex-col gap-stack-lg">
+    <main className="relative z-10 w-full max-w-7xl mx-auto px-container-padding py-stack-lg flex flex-col gap-6">
+      
+      {/* Balance Overview */}
       <section className="flex flex-col items-center justify-center py-8">
-        <h2 className="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest mb-stack-sm">Total Savings</h2>
+        <h2 className="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest mb-stack-sm flex items-center gap-2">
+          <Wallet className="w-4 h-4" />
+          Total Savings
+        </h2>
         <div className="relative">
           <h1 className="font-display-xl text-display-xl text-primary text-center">
             <span className="text-secondary">$</span>{vaultBalance > 0 ? vaultBalance.toFixed(2) : '0.00'}
@@ -46,89 +40,74 @@ export default function Home() {
         </div>
         <div className="mt-stack-md flex gap-4">
           <span className="bg-secondary-container/10 text-secondary border border-secondary/30 px-3 py-1 font-label-caps text-label-caps rounded-DEFAULT flex items-center gap-2">
-            <span className="material-symbols-outlined text-[14px]">trending_up</span>
-            +5.2% APY
+            <TrendingUp className="w-4 h-4" />
+            +12.4% APY
           </span>
           <span className="bg-surface-variant text-on-surface-variant px-3 py-1 font-label-caps text-label-caps rounded-DEFAULT border border-outline-variant">
             {SUPPORTED_TOKEN.symbol}
           </span>
         </div>
-        <div className="mt-8 flex justify-center">
-          <AppKitButton />
-        </div>
-      </section>
-
-      {/* Streak moved up for MiniPay mobile view immediate impact */}
-      <div className="bg-surface-container border border-surface-variant p-6 rounded-DEFAULT neo-shadow-dark flex flex-col items-center justify-center text-center relative overflow-hidden">
-        <div className="absolute top-4 right-4">
-          <span className="material-symbols-outlined text-outline-variant text-sm">info</span>
-        </div>
-        <div className="w-16 h-16 bg-surface-bright rounded-full flex items-center justify-center mb-4 border border-outline-variant neo-shadow-dark">
-          <span className="material-symbols-outlined text-primary-container text-3xl" style={{ fontVariationSettings: "'FILL' 1" }}>local_fire_department</span>
-        </div>
-        <h3 className="font-headline-lg text-headline-lg text-primary mb-1">{currentStreak} <span className="text-headline-md text-on-surface-variant">Days</span></h3>
-        <p className="font-label-caps text-label-caps text-primary-container uppercase tracking-widest">Saving Streak</p>
-      </div>
-
-      <div className="bg-surface-container border border-surface-variant p-6 rounded-DEFAULT neo-shadow-dark flex flex-col gap-6 relative overflow-hidden">
-        <div className="absolute -right-20 -bottom-20 w-64 h-64 bg-primary-container rounded-full blur-[80px] opacity-10"></div>
-        <div className="flex flex-col gap-2 relative z-10">
-          <h3 className="font-headline-md text-headline-md text-primary">Grow Your Wealth</h3>
-          <p className="font-body-md text-body-md text-on-surface-variant max-w-md">Deposit {SUPPORTED_TOKEN.symbol} into your high-yield vault and maintain your streak.</p>
-        </div>
-
-        {isDepositSuccess ? (
-          <div className="flex flex-col items-center gap-4 py-4 z-10">
-            <div className="w-12 h-12 bg-secondary/20 rounded-full flex items-center justify-center border border-secondary/50">
-              <span className="material-symbols-outlined text-secondary">check_circle</span>
-            </div>
-            <p className="text-primary font-headline-md">Deposit Successful!</p>
-            <button 
-              onClick={() => {
-                // Reset flow
-                window.location.reload(); 
-              }}
-              className="bg-surface-bright text-on-surface border border-outline px-6 py-2 uppercase font-label-caps text-label-caps hover:bg-surface-variant transition-colors"
-            >
-              Save Again
-            </button>
-          </div>
-        ) : (
-          <div className="flex flex-col gap-4 z-10">
-            <div className="flex gap-2">
-              {['1', '5', '10'].map((preset) => (
-                <button
-                  key={preset}
-                  onClick={() => handlePreset(preset)}
-                  className={`flex-1 py-2 font-label-caps text-label-caps border ${depositAmount === preset ? 'bg-primary-container text-on-primary-container border-primary-container' : 'bg-surface-bright text-on-surface border-outline-variant hover:bg-surface-variant'}`}
-                >
-                  ${preset}
-                </button>
-              ))}
-            </div>
-            
-            <input 
-              type="number" 
-              placeholder={`Amount in ${SUPPORTED_TOKEN.symbol}`}
-              value={depositAmount}
-              onChange={(e) => setDepositAmount(e.target.value)}
-              className="bg-surface-bright border border-outline-variant text-primary p-3 rounded-none font-body-lg focus:outline-none focus:border-primary-container"
-            />
-            
-            <button 
-              onClick={handleDeposit}
-              disabled={!isConnected || isDepositing || !depositAmount}
-              className="relative bg-primary-container text-on-primary-container font-label-caps text-label-caps px-8 py-4 uppercase flex justify-center items-center gap-2 neo-shadow-dark hover:bg-secondary hover:neo-shadow-primary transition-all active:translate-y-1 active:translate-x-1 active:shadow-none disabled:opacity-50 disabled:pointer-events-none w-full"
-            >
-              {isDepositing ? (
-                <span className="material-symbols-outlined animate-spin">sync</span>
-              ) : (
-                <span className="material-symbols-outlined">add_circle</span>
-              )}
-              {isDepositing ? 'Depositing...' : `Deposit ${SUPPORTED_TOKEN.symbol}`}
-            </button>
+        {!isConnected && (
+          <div className="mt-8 flex justify-center">
+            <AppKitButton />
           </div>
         )}
+      </section>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {/* Streak Quick View */}
+        <Link href="/streak" className="block group">
+          <div className="bg-surface-container border border-surface-variant p-6 rounded-xl shadow-lg flex items-center gap-4 transition-colors hover:bg-surface-container-high h-full">
+            <div className={`w-16 h-16 rounded-full flex items-center justify-center shadow-inner ${currentStreak > 0 ? 'bg-orange-500/20 text-orange-500 border border-orange-500/30' : 'bg-surface-variant text-on-surface-variant border border-outline'}`}>
+              <Flame className="w-8 h-8" />
+            </div>
+            <div className="flex-1">
+              <h3 className="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest mb-1">Active Streak</h3>
+              <div className="font-headline-lg text-primary">
+                {currentStreak} <span className="text-body-md text-on-surface-variant font-normal">Days</span>
+              </div>
+              <p className="text-xs text-orange-500 mt-1 font-medium">{currentMultiplier}x Yield Multiplier</p>
+            </div>
+            <ArrowRight className="w-5 h-5 text-on-surface-variant group-hover:text-primary transition-transform group-hover:translate-x-1" />
+          </div>
+        </Link>
+
+        {/* Goal Widget */}
+        <div className="bg-surface-container border border-surface-variant p-6 rounded-xl shadow-lg flex flex-col justify-center h-full">
+          <div className="flex justify-between items-end mb-4">
+            <div>
+              <h3 className="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest flex items-center gap-2 mb-1">
+                <Target className="w-4 h-4" />
+                Emergency Fund
+              </h3>
+              <div className="font-headline-sm text-primary">
+                ${vaultBalance.toFixed(0)} <span className="text-body-sm text-on-surface-variant">/ ${savingsGoal}</span>
+              </div>
+            </div>
+            <span className="font-headline-sm text-secondary">{goalProgress.toFixed(0)}%</span>
+          </div>
+          <div className="w-full h-3 bg-surface-variant rounded-full overflow-hidden">
+            <div 
+              className="h-full bg-secondary transition-all duration-1000 ease-out"
+              style={{ width: `${goalProgress}%` }}
+            ></div>
+          </div>
+        </div>
+      </div>
+
+      {/* Yield Projection */}
+      <div className="bg-surface-container-low border border-outline-variant p-6 rounded-xl flex flex-col sm:flex-row items-center justify-between gap-6 relative overflow-hidden mt-2">
+        <div className="absolute left-0 top-0 w-2 h-full bg-gradient-to-b from-primary-container to-secondary"></div>
+        <div className="pl-4">
+          <h3 className="font-headline-sm text-primary mb-1">Your Money is Working</h3>
+          <p className="font-body-sm text-on-surface-variant max-w-sm">
+            At your current streak multiplier, you're projected to earn <strong className="text-secondary">+${projectedMonthly.toFixed(2)}</strong> this month.
+          </p>
+        </div>
+        <Link href="/deposit" className="w-full sm:w-auto bg-primary-container text-on-primary-container font-label-caps px-6 py-3 rounded-lg flex items-center justify-center gap-2 hover:bg-[#c4dc30] transition-colors shadow-md shrink-0">
+          Deposit More
+          <ArrowRight className="w-4 h-4" />
+        </Link>
       </div>
 
     </main>
