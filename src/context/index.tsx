@@ -13,9 +13,9 @@ if (!projectId) {
 }
 
 const metadata = {
-  name: 'Base Connect Playground',
-  description: 'Reown AppKit + Base + Multichain Builder Playground',
-  url: process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : 'https://base-connect-playground.example',
+  name: 'CeloSaver',
+  description: 'Save-to-Earn MiniApp for Celo MiniPay',
+  url: process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : 'https://celo-saver.pages.dev',
   icons: ['https://avatars.githubusercontent.com/u/179229932'],
 };
 

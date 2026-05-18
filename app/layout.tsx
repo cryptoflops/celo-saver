@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Manrope, Space_Grotesk } from 'next/font/google';
 import ClientWrapper from '@/components/ClientWrapper';
+import MiniPayBar from '@/components/MiniPayBar';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ThemeProvider } from '@/components/theme-provider';
