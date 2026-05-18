@@ -3,8 +3,8 @@
 ## [Unreleased] - 2026-05-18
 
 ### Changed
-- Enhanced mobile responsiveness
-- Cleaned up unused imports
+- Updated dependencies to latest stable
+- Added input validation for amounts
 
 ### Fixed
-- Corrected gas estimation for Celo L2
+- Fixed edge case in balance display
