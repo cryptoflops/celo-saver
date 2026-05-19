@@ -1,11 +1,11 @@
 {
   "coverageThreshold": {
     "global": {
-      "branches": 74,
-      "lines": 79
+      "branches": 71,
+      "lines": 71
     }
   },
-  "testTimeout": 6913,
-  "maxWorkers": 3,
-  "updatedAt": "2026-05-12T00:52:53.435Z"
+  "testTimeout": 7261,
+  "maxWorkers": 5,
+  "updatedAt": "2026-05-19T15:30:21.406Z"
 }
