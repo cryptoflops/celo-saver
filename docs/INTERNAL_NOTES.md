@@ -24,3 +24,4 @@
 - Contract reads via useReadContract work fine on Celo, but multicall batching is not supported on all RPCs.
 - Loyalty point accumulation is gas-efficient since we only write one uint256 per visit.
 - The useMiniPay hook detects isMiniPay synchronously, but some devices inject the provider async. Added 500ms fallback.
+- The useMiniPay hook detects isMiniPay synchronously, but some devices inject the provider async. Added 500ms fallback.
