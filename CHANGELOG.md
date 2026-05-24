@@ -1,10 +1,10 @@
 # Changelog
 
-## [Unreleased] - 2026-05-18
+## [Unreleased] - 2026-05-24
 
 ### Changed
-- Updated dependencies to latest stable
-- Added input validation for amounts
+- Improved loading state indicators
+- Reduced bundle size by tree-shaking
 
 ### Fixed
-- Fixed edge case in balance display
+- Resolved race condition in wallet sync
