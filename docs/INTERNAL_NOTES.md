@@ -27,3 +27,4 @@
 - The useMiniPay hook detects isMiniPay synchronously, but some devices inject the provider async. Added 500ms fallback.
 - The AppKit modal does not render in MiniPay WebView which is expected. Auto-connect via injected handles it.
 - Reviewed component tree performance after adding MiniPayBar, no measurable regression.
+- Reviewed component tree performance after adding MiniPayBar, no measurable regression.
