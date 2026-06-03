@@ -29,3 +29,4 @@
 - Reviewed component tree performance after adding MiniPayBar, no measurable regression.
 - Reviewed component tree performance after adding MiniPayBar, no measurable regression.
 - Investigated rendering jitter on mobile layout when switching between MiniPay and desktop contexts.
+- Tested cUSD approve + deposit flow on Celo mainnet. Gas estimates stable at ~45k per tx.
