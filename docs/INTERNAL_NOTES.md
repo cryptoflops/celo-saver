@@ -28,3 +28,4 @@
 - The AppKit modal does not render in MiniPay WebView which is expected. Auto-connect via injected handles it.
 - Reviewed component tree performance after adding MiniPayBar, no measurable regression.
 - Reviewed component tree performance after adding MiniPayBar, no measurable regression.
+- Investigated rendering jitter on mobile layout when switching between MiniPay and desktop contexts.
