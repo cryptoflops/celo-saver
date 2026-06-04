@@ -7,4 +7,4 @@
 - Added input validation for amounts
 
 ### Fixed
-- Fixed edge case in balance display
+- Fixed decimal formatting for small amounts
