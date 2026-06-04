@@ -1,9 +1,9 @@
 # Changelog
 
-## [Unreleased] - 2026-06-01
+## [Unreleased] - 2026-06-04
 
 ### Changed
-- Improved error handling in contract interactions
+- Updated dependencies to latest stable
 - Added input validation for amounts
 
 ### Fixed
