@@ -31,3 +31,4 @@
 - Investigated rendering jitter on mobile layout when switching between MiniPay and desktop contexts.
 - Tested cUSD approve + deposit flow on Celo mainnet. Gas estimates stable at ~45k per tx.
 - Tested the NetworkEnforcer component with chain switching. Smooth on MiniPay, slight delay on MetaMask.
+- Investigated rendering jitter on mobile layout when switching between MiniPay and desktop contexts.
