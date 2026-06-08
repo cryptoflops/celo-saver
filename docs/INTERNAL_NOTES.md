@@ -33,3 +33,4 @@
 - Tested the NetworkEnforcer component with chain switching. Smooth on MiniPay, slight delay on MetaMask.
 - Investigated rendering jitter on mobile layout when switching between MiniPay and desktop contexts.
 - Contract reads via useReadContract work fine on Celo, but multicall batching is not supported on all RPCs.
+- The escrow contract refund timeout (7 days) seems appropriate for freelance gig markets.
