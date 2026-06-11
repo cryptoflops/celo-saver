@@ -36,3 +36,4 @@
 - The escrow contract refund timeout (7 days) seems appropriate for freelance gig markets.
 - Reviewed WagmiProvider config. The QueryClient should probably have a longer gcTime for balance queries.
 - The AppKit modal does not render in MiniPay WebView which is expected. Auto-connect via injected handles it.
+- Loyalty point accumulation is gas-efficient since we only write one uint256 per visit.
