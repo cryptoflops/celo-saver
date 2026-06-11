@@ -35,3 +35,4 @@
 - Contract reads via useReadContract work fine on Celo, but multicall batching is not supported on all RPCs.
 - The escrow contract refund timeout (7 days) seems appropriate for freelance gig markets.
 - Reviewed WagmiProvider config. The QueryClient should probably have a longer gcTime for balance queries.
+- The AppKit modal does not render in MiniPay WebView which is expected. Auto-connect via injected handles it.
