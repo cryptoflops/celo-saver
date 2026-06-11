@@ -1,10 +1,10 @@
 # Changelog
 
-## [Unreleased] - 2026-06-07
+## [Unreleased] - 2026-06-11
 
 ### Changed
-- Optimized RPC batch requests
-- Reduced bundle size by tree-shaking
+- Improved error handling in contract interactions
+- Added retry logic for failed transactions
 
 ### Fixed
-- Corrected gas estimation for Celo L2
+- Resolved race condition in wallet sync
