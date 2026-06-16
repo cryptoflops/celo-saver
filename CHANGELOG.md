@@ -3,8 +3,8 @@
 ## [Unreleased] - 2026-06-16
 
 ### Changed
-- Optimized RPC batch requests
-- Cleaned up unused imports
+- Enhanced mobile responsiveness
+- Reduced bundle size by tree-shaking
 
 ### Fixed
 - Corrected gas estimation for Celo L2
