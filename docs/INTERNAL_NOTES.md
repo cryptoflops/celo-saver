@@ -39,3 +39,4 @@
 - Loyalty point accumulation is gas-efficient since we only write one uint256 per visit.
 - Noticed the useBalance hook refetches on every block. Consider adding staleTime to reduce RPC load.
 - The AppKit modal does not render in MiniPay WebView which is expected. Auto-connect via injected handles it.
+- The AppKit modal does not render in MiniPay WebView which is expected. Auto-connect via injected handles it.
