@@ -40,3 +40,4 @@
 - Noticed the useBalance hook refetches on every block. Consider adding staleTime to reduce RPC load.
 - The AppKit modal does not render in MiniPay WebView which is expected. Auto-connect via injected handles it.
 - The AppKit modal does not render in MiniPay WebView which is expected. Auto-connect via injected handles it.
+- The AppKit modal does not render in MiniPay WebView which is expected. Auto-connect via injected handles it.
