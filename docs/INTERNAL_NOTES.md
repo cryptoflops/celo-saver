@@ -41,3 +41,4 @@
 - The AppKit modal does not render in MiniPay WebView which is expected. Auto-connect via injected handles it.
 - The AppKit modal does not render in MiniPay WebView which is expected. Auto-connect via injected handles it.
 - The AppKit modal does not render in MiniPay WebView which is expected. Auto-connect via injected handles it.
+- The AppKit modal does not render in MiniPay WebView which is expected. Auto-connect via injected handles it.
