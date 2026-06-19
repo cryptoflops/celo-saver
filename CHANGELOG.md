@@ -1,10 +1,10 @@
 # Changelog
 
-## [Unreleased] - 2026-06-16
+## [Unreleased] - 2026-06-19
 
 ### Changed
-- Enhanced mobile responsiveness
-- Reduced bundle size by tree-shaking
+- Refactored wallet connection flow
+- Cleaned up unused imports
 
 ### Fixed
-- Corrected gas estimation for Celo L2
+- Fixed decimal formatting for small amounts
