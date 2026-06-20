@@ -1,6 +1,6 @@
 {
   "name": "@cryptoflops/celo-saver",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "CeloSaver - Save-to-Earn MiniApp for Celo MiniPay",
   "files": [
     "src",
