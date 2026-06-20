@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "@reown/appkit": "1.8.14",
-    "@reown/appkit-adapter-wagmi": "1.8.14",
+    "@reown/appkit-adapter-wagmi": "1.8.21",
     "@tanstack/react-query": "5.90.10",
     "autoprefixer": "10.4.22",
     "lucide-react": "^1.16.0",
