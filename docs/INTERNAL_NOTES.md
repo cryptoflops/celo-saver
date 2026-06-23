@@ -42,3 +42,4 @@
 - The AppKit modal does not render in MiniPay WebView which is expected. Auto-connect via injected handles it.
 - The AppKit modal does not render in MiniPay WebView which is expected. Auto-connect via injected handles it.
 - The AppKit modal does not render in MiniPay WebView which is expected. Auto-connect via injected handles it.
+- Framer Motion animations perform well on low-end Android devices commonly used with MiniPay.
