@@ -1,10 +1,10 @@
 # Changelog
 
-## [Unreleased] - 2026-06-19
+## [Unreleased] - 2026-06-23
 
 ### Changed
-- Updated dependencies to latest stable
+- Improved error handling in contract interactions
 - Cleaned up unused imports
 
 ### Fixed
-- Resolved race condition in wallet sync
+- Fixed edge case in balance display
