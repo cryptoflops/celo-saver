@@ -3,8 +3,8 @@
 ## [Unreleased] - 2026-06-25
 
 ### Changed
-- Refactored wallet connection flow
-- Added input validation for amounts
+- Improved error handling in contract interactions
+- Cleaned up unused imports
 
 ### Fixed
 - Fixed decimal formatting for small amounts
