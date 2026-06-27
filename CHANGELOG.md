@@ -3,8 +3,8 @@
 ## [Unreleased] - 2026-06-27
 
 ### Changed
-- Enhanced mobile responsiveness
-- Reduced bundle size by tree-shaking
+- Improved loading state indicators
+- Added input validation for amounts
 
 ### Fixed
 - Fixed edge case in balance display
