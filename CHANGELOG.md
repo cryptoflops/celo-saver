@@ -1,10 +1,10 @@
 # Changelog
 
-## [Unreleased] - 2026-06-25
+## [Unreleased] - 2026-06-27
 
 ### Changed
-- Improved error handling in contract interactions
-- Cleaned up unused imports
+- Enhanced mobile responsiveness
+- Reduced bundle size by tree-shaking
 
 ### Fixed
-- Fixed decimal formatting for small amounts
+- Fixed edge case in balance display
