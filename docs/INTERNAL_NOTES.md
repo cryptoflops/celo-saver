@@ -45,3 +45,4 @@
 - Framer Motion animations perform well on low-end Android devices commonly used with MiniPay.
 - Tested cUSD approve + deposit flow on Celo mainnet. Gas estimates stable at ~45k per tx.
 - Tested the NetworkEnforcer component with chain switching. Smooth on MiniPay, slight delay on MetaMask.
+- Reviewed component tree performance after adding MiniPayBar, no measurable regression.
