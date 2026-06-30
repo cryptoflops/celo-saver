@@ -47,3 +47,4 @@
 - Tested the NetworkEnforcer component with chain switching. Smooth on MiniPay, slight delay on MetaMask.
 - Reviewed component tree performance after adding MiniPayBar, no measurable regression.
 - Tested the NetworkEnforcer component with chain switching. Smooth on MiniPay, slight delay on MetaMask.
+- Investigated rendering jitter on mobile layout when switching between MiniPay and desktop contexts.
