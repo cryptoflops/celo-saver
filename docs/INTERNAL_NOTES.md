@@ -49,3 +49,4 @@
 - Tested the NetworkEnforcer component with chain switching. Smooth on MiniPay, slight delay on MetaMask.
 - Investigated rendering jitter on mobile layout when switching between MiniPay and desktop contexts.
 - Investigated rendering jitter on mobile layout when switching between MiniPay and desktop contexts.
+- Checked backward compatibility with older Celo RPC responses. The L2 migration changed some receipt fields.
