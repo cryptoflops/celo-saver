@@ -1,10 +1,10 @@
 # Changelog
 
-## [Unreleased] - 2026-06-30
+## [Unreleased] - 2026-07-01
 
 ### Changed
-- Improved loading state indicators
-- Reduced bundle size by tree-shaking
+- Updated dependencies to latest stable
+- Added input validation for amounts
 
 ### Fixed
-- Corrected gas estimation for Celo L2
+- Fixed edge case in balance display
