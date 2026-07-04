@@ -1,10 +1,10 @@
 # Changelog
 
-## [Unreleased] - 2026-07-02
+## [Unreleased] - 2026-07-04
 
 ### Changed
 - Optimized RPC batch requests
-- Added retry logic for failed transactions
+- Reduced bundle size by tree-shaking
 
 ### Fixed
-- Resolved race condition in wallet sync
+- Fixed edge case in balance display
