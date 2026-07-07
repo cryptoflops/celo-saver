@@ -1,10 +1,10 @@
 # Changelog
 
-## [Unreleased] - 2026-07-06
+## [Unreleased] - 2026-07-07
 
 ### Changed
-- Optimized RPC batch requests
-- Added retry logic for failed transactions
+- Improved error handling in contract interactions
+- Added input validation for amounts
 
 ### Fixed
 - Fixed decimal formatting for small amounts
