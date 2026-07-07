@@ -51,3 +51,4 @@
 - Investigated rendering jitter on mobile layout when switching between MiniPay and desktop contexts.
 - Checked backward compatibility with older Celo RPC responses. The L2 migration changed some receipt fields.
 - The escrow contract refund timeout (7 days) seems appropriate for freelance gig markets.
+- Reviewed component tree performance after adding MiniPayBar, no measurable regression.
