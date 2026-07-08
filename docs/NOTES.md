@@ -1,6 +1,6 @@
 # celo-saver Deployment Notes
 
-Last verified: 2026-07-06T12:03:35.034Z
+Last verified: 2026-07-08T15:21:48.871Z
 
 ## Prerequisites
 - Node.js >= 18
@@ -12,4 +12,4 @@ npm install
 npm run dev
 ```
 
-> Build hash: gtdaxj1k
+> Build hash: 98m7m2uo
