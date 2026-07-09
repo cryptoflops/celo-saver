@@ -3,8 +3,8 @@
 ## [Unreleased] - 2026-07-09
 
 ### Changed
-- Improved loading state indicators
-- Reduced bundle size by tree-shaking
+- Enhanced mobile responsiveness
+- Added input validation for amounts
 
 ### Fixed
-- Fixed edge case in balance display
+- Resolved race condition in wallet sync
