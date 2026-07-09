@@ -1,10 +1,10 @@
 # Changelog
 
-## [Unreleased] - 2026-07-07
+## [Unreleased] - 2026-07-09
 
 ### Changed
-- Optimized RPC batch requests
-- Cleaned up unused imports
+- Enhanced mobile responsiveness
+- Added input validation for amounts
 
 ### Fixed
-- Resolved race condition in wallet sync
+- Fixed decimal formatting for small amounts
