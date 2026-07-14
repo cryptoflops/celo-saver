@@ -1,10 +1,10 @@
 # Changelog
 
-## [Unreleased] - 2026-07-09
+## [Unreleased] - 2026-07-14
 
 ### Changed
-- Enhanced mobile responsiveness
-- Added input validation for amounts
+- Optimized RPC batch requests
+- Added retry logic for failed transactions
 
 ### Fixed
-- Resolved race condition in wallet sync
+- Corrected gas estimation for Celo L2
