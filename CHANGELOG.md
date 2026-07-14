@@ -3,7 +3,7 @@
 ## [Unreleased] - 2026-07-14
 
 ### Changed
-- Optimized RPC batch requests
+- Improved loading state indicators
 - Added retry logic for failed transactions
 
 ### Fixed
