@@ -11,7 +11,7 @@ const nextConfig: NextConfig = {
 
     return config;
   },
-  // Remove output: "export" — @opennextjs/cloudflare handles the build
+  output: "export",
   images: {
     unoptimized: true,
   },
