@@ -1,6 +1,6 @@
 'use client';
 
-import { SUPPORTED_TOKEN } from '@/contracts';
+import { SUPPORTED_TOKEN, parseUserData } from '@/contracts';
 import { useUserData } from '@/hooks/useVault';
 import { useAccount } from 'wagmi';
 import AppKitButton from '@/components/AppKitButton';
@@ -10,9 +10,10 @@ import { ArrowRight, Flame, Target, TrendingUp, Wallet } from 'lucide-react';
 export default function Home() {
   const { isConnected } = useAccount();
   const { data: userData } = useUserData();
+  const parsed = parseUserData(userData);
 
-  const currentStreak = (userData as any[])?.[1] ? Number((userData as any[])[1]) : 0;
-  const vaultBalance = (userData as any[])?.[0] ? Number((userData as any[])[0]) / 1e18 : 0;
+  const currentStreak = parsed ? Number(parsed.streak) : 0;
+  const vaultBalance = parsed ? Number(parsed.balance) / 1e18 : 0;
 
   // Mock savings goal
   const savingsGoal = 500;
@@ -58,7 +59,7 @@ export default function Home() {
         {/* Streak Quick View */}
         <Link href="/streak" className="block group">
           <div className="bg-surface-container border border-surface-variant p-6 rounded-xl shadow-lg flex items-center gap-4 transition-colors hover:bg-surface-container-high h-full">
-            <div className={`w-16 h-16 rounded-full flex items-center justify-center shadow-inner ${currentStreak > 0 ? 'bg-orange-500/20 text-orange-500 border border-orange-500/30' : 'bg-surface-variant text-on-surface-variant border border-outline'}`}>
+            <div className={`w-16 h-16 rounded-full flex items-center justify-center shadow-inner ${currentStreak > 0 ? 'bg-streak/20 text-streak border border-streak/30' : 'bg-surface-variant text-on-surface-variant border border-outline'}`}>
               <Flame className="w-8 h-8" />
             </div>
             <div className="flex-1">
@@ -66,7 +67,7 @@ export default function Home() {
               <div className="font-headline-lg text-primary">
                 {currentStreak} <span className="text-body-md text-on-surface-variant font-normal">Days</span>
               </div>
-              <p className="text-xs text-orange-500 mt-1 font-medium">{currentMultiplier}x Yield Multiplier</p>
+              <p className="text-xs text-streak mt-1 font-medium">{currentMultiplier}x Yield Multiplier</p>
             </div>
             <ArrowRight className="w-5 h-5 text-on-surface-variant group-hover:text-primary transition-transform group-hover:translate-x-1" />
           </div>

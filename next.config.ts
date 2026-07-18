@@ -1,7 +1,6 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  turbopack: {},
   webpack: (config) => {
     // Ignore optional deps from MetaMask SDK
     config.resolve.fallback = {
@@ -12,7 +11,7 @@ const nextConfig: NextConfig = {
 
     return config;
   },
-  output: "export",
+  // Remove output: "export" — @opennextjs/cloudflare handles the build
   images: {
     unoptimized: true,
   },

@@ -13,3 +13,23 @@ export const SUPPORTED_TOKEN = {
 export const CELO_CHAIN_ID = 42220;
 
 export { CeloSaverVaultABI, ERC20ABI };
+
+// Typed helper for user data returned by the vault contract
+export interface UserData {
+  balance: bigint;
+  streak: bigint;
+  lastDeposit: bigint;
+}
+
+export function parseUserData(data: unknown): UserData | null {
+  try {
+    if (!data || !Array.isArray(data) || data.length < 3) return null;
+    return {
+      balance: typeof data[0] === 'bigint' ? data[0] : BigInt(data[0] ?? 0),
+      streak: typeof data[1] === 'bigint' ? data[1] : BigInt(data[1] ?? 0),
+      lastDeposit: typeof data[2] === 'bigint' ? data[2] : BigInt(data[2] ?? 0),
+    };
+  } catch {
+    return null;
+  }
+}

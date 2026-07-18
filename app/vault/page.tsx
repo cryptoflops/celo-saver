@@ -24,7 +24,7 @@ export default function VaultPage() {
       </section>
 
       <section className="grid grid-cols-1 md:grid-cols-12 gap-6">
-        <div className="md:col-span-4 bg-surface-container-high border border-outline-variant p-6 shadow-[8px_8px_0px_0px_#000000] relative overflow-hidden group">
+        <div className="md:col-span-4 bg-surface-container-high border border-outline-variant p-6 shadow-neo-md relative overflow-hidden group">
           <div className="absolute -right-10 -top-10 w-32 h-32 bg-primary-container/10 blur-2xl rounded-full group-hover:bg-primary-container/20 transition-colors duration-500"></div>
           <h3 className="font-label-caps text-label-caps text-on-surface-variant mb-4 flex items-center gap-2">
             <BarChart3 className="w-5 h-5 text-primary-container" />
@@ -33,13 +33,13 @@ export default function VaultPage() {
           <div className="font-display-xl text-display-xl text-primary-container tabular-nums tracking-tighter">
             12.4<span className="text-headline-md">%</span>
           </div>
-          <div className="mt-4 font-body-md text-body-md text-green-500 flex items-center gap-1">
+          <div className="mt-4 font-body-md text-body-md text-success flex items-center gap-1">
             <Activity className="w-4 h-4" />
             +0.2% 7d avg
           </div>
         </div>
 
-        <div className="md:col-span-4 bg-surface-container border border-outline-variant p-6 shadow-[8px_8px_0px_0px_#000000]">
+        <div className="md:col-span-4 bg-surface-container border border-outline-variant p-6 shadow-neo-md">
           <h3 className="font-label-caps text-label-caps text-on-surface-variant mb-4 flex items-center gap-2">
             <Database className="w-5 h-5 text-tertiary" />
             Protocol TVL
@@ -52,7 +52,7 @@ export default function VaultPage() {
           </div>
         </div>
 
-        <div className="md:col-span-4 bg-surface-container border border-outline-variant p-6 shadow-[8px_8px_0px_0px_#000000] relative group">
+        <div className="md:col-span-4 bg-surface-container border border-outline-variant p-6 shadow-neo-md relative group">
           <h3 className="font-label-caps text-label-caps text-on-surface-variant mb-4 flex items-center gap-2">
             <Droplet className="w-5 h-5 text-secondary" />
             Available Liquidity
@@ -106,7 +106,7 @@ export default function VaultPage() {
                 </div>
               </div>
               <div className="text-right">
-                <div className="font-headline-md text-[18px] text-green-500 tabular-nums">+ 500 cUSD</div>
+                <div className="font-headline-md text-[18px] text-success tabular-nums">+ 500 cUSD</div>
                 <div className="font-body-md text-sm text-on-surface-variant hover:text-secondary transition-colors">
                   <a href="https://celoscan.io/tx/0x4a...f92" target="_blank" rel="noopener noreferrer">Tx: 0x4a...f92</a>
                 </div>
@@ -115,7 +115,7 @@ export default function VaultPage() {
 
             <div className="flex items-center justify-between group p-3 hover:bg-surface-container transition-colors border border-transparent hover:border-outline-variant/30">
               <div className="flex items-center gap-4">
-                <div className="w-10 h-10 bg-orange-500/10 flex items-center justify-center border border-orange-500/30 text-orange-500 rounded-full">
+                <div className="w-10 h-10 bg-streak/10 flex items-center justify-center border border-streak/30 text-streak rounded-full">
                   <Trophy className="w-5 h-5" />
                 </div>
                 <div>
@@ -124,7 +124,7 @@ export default function VaultPage() {
                 </div>
               </div>
               <div className="text-right">
-                <div className="font-headline-md text-[18px] text-orange-500 tabular-nums">1.5x Boost</div>
+                <div className="font-headline-md text-[18px] text-streak tabular-nums">1.5x Boost</div>
                 <div className="font-body-md text-sm text-on-surface-variant">Applied to yield</div>
               </div>
             </div>
@@ -140,7 +140,7 @@ export default function VaultPage() {
                 </div>
               </div>
               <div className="text-right">
-                <div className="font-headline-md text-[18px] text-green-500 tabular-nums">+ 1,250 cUSD</div>
+                <div className="font-headline-md text-[18px] text-success tabular-nums">+ 1,250 cUSD</div>
                 <div className="font-body-md text-sm text-on-surface-variant hover:text-secondary transition-colors">
                   <a href="https://celoscan.io/tx/0x8b...2c1" target="_blank" rel="noopener noreferrer">Tx: 0x8b...2c1</a>
                 </div>
@@ -168,9 +168,16 @@ export default function VaultPage() {
 
       {/* Withdraw Modal */}
       {showWithdrawModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
-          <div className="bg-surface-container border border-surface-variant p-6 shadow-xl w-full max-w-md rounded-xl">
-            <h3 className="font-headline-md text-primary mb-2">Withdraw Funds</h3>
+        <div 
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="withdraw-modal-title"
+          onKeyDown={(e) => e.key === 'Escape' && setShowWithdrawModal(false)}
+          tabIndex={-1}
+        >
+          <div className="bg-surface-container border border-surface-variant p-6 shadow-xl w-full max-w-md rounded-xl" onClick={(e) => e.stopPropagation()}>
+            <h3 id="withdraw-modal-title" className="font-headline-md text-primary mb-2">Withdraw Funds</h3>
             <p className="font-body-sm text-on-surface-variant mb-6">
               Enter the amount of cUSD you want to withdraw to your wallet. You currently have ~500.00 cUSD available.
             </p>
@@ -181,6 +188,7 @@ export default function VaultPage() {
               value={withdrawAmount}
               onChange={(e) => setWithdrawAmount(e.target.value)}
               className="w-full bg-surface-bright border border-outline-variant text-primary p-3 rounded-lg font-display-sm focus:outline-none focus:border-primary-container mb-6"
+              autoFocus
             />
             
             <div className="flex gap-4">

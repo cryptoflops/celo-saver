@@ -50,16 +50,16 @@ export default function DepositPage() {
           </div>
         ) : isDepositSuccess ? (
           <div className="flex flex-col items-center gap-4 py-8 z-10">
-            <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center border border-green-500/50">
-              <CheckCircle2 className="w-8 h-8 text-green-500" />
+            <div className="w-16 h-16 bg-success/20 rounded-full flex items-center justify-center border border-success/50">
+              <CheckCircle2 className="w-8 h-8 text-success" />
             </div>
             <p className="text-primary font-headline-md text-2xl">Deposit Successful!</p>
-            <button 
-              onClick={() => window.location.reload()}
+            <Link 
+              href="/"
               className="mt-4 bg-surface-bright text-on-surface border border-outline px-8 py-3 uppercase font-label-caps tracking-widest hover:bg-surface-variant transition-colors rounded-lg"
             >
-              Save Again
-            </button>
+              Back to Dashboard
+            </Link>
           </div>
         ) : (
           <div className="flex flex-col gap-6 z-10">

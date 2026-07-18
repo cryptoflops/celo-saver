@@ -28,22 +28,22 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <div className="fixed inset-0 z-0 geometric-bg pointer-events-none"></div>
         <div className="fixed inset-0 z-0 bg-noise pointer-events-none"></div>
         
-        <header className="flex justify-between items-center w-full px-6 py-4 bg-surface-container-highest/90 backdrop-blur-xl border-b-2 border-surface-variant z-40 relative md:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+        <header className="flex justify-between items-center w-full px-6 py-4 bg-surface-container-highest/90 backdrop-blur-xl border-b-2 border-surface-variant z-40 relative md:shadow-neo-dark">
           <div className="flex items-center gap-4">
             <Image src="/logo.png" alt="CeloSaver Logo" width={32} height={32} className="rounded-md object-contain" />
             <h1 className="font-headline-md text-headline-md text-primary-container tracking-tighter uppercase font-black">CELOSAVER</h1>
           </div>
           
           <nav className="hidden md:flex items-center gap-8">
-            <Link className="font-label-caps text-label-caps text-primary-container border-b-2 border-primary-container pb-1" href="/">HOME</Link>
-            <Link className="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary transition-colors pb-1" href="/deposit">DEPOSIT</Link>
-            <Link className="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary transition-colors pb-1" href="/vault">VAULT</Link>
-            <Link className="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary transition-colors pb-1" href="/streak">STREAK</Link>
+            <Link className="font-label-caps text-label-caps text-primary-container border-b-2 border-primary-container pb-1 focus-visible:outline-2 focus-visible:outline-primary-container" href="/">HOME</Link>
+            <Link className="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary transition-colors pb-1 focus-visible:outline-2 focus-visible:outline-primary-container" href="/deposit">DEPOSIT</Link>
+            <Link className="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary transition-colors pb-1 focus-visible:outline-2 focus-visible:outline-primary-container" href="/vault">VAULT</Link>
+            <Link className="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary transition-colors pb-1 focus-visible:outline-2 focus-visible:outline-primary-container" href="/streak">STREAK</Link>
           </nav>
           
           <div className="flex items-center gap-3">
             <ThemeToggle />
-            <div className="w-8 h-8 rounded-full bg-surface-variant border border-outline flex items-center justify-center text-on-surface-variant hover:text-secondary transition-colors cursor-pointer">
+            <div className="w-10 h-10 rounded-full bg-surface-variant border border-outline flex items-center justify-center text-on-surface-variant hover:text-secondary transition-colors cursor-pointer" role="button" aria-label="User profile">
               <User className="h-5 w-5" />
             </div>
           </div>
@@ -51,23 +51,23 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         <ClientWrapper>{children}</ClientWrapper>
 
-        <nav className="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center px-4 py-3 pb-6 bg-surface-container-highest/90 backdrop-blur-xl border-t-2 border-surface-variant z-50 shadow-[0px_-4px_0px_0px_rgba(0,0,0,1)]">
-          <Link href="/" className="flex flex-col items-center justify-center text-primary-container bg-surface-container-low shadow-[4px_4px_0px_0px_#d6ef35] border border-primary-container p-2">
+        <nav className="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center px-4 py-2 pb-6 bg-surface-container-highest/90 backdrop-blur-xl border-t-2 border-surface-variant z-50 shadow-neo-dark-bottom">
+          <Link href="/" className="flex flex-col items-center justify-center text-primary-container bg-surface-container-low shadow-[4px_4px_0px_0px_#d6ef35] border border-primary-container p-3 min-w-[64px]">
             <LayoutDashboard className="h-5 w-5 mb-1" />
             <span className="font-label-caps text-[10px] uppercase tracking-wider">Home</span>
           </Link>
           
-          <Link href="/deposit" className="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:text-secondary transition-colors">
+          <Link href="/deposit" className="flex flex-col items-center justify-center text-on-surface-variant p-3 min-w-[64px] hover:text-secondary transition-colors">
             <PlusCircle className="h-5 w-5 mb-1" />
             <span className="font-label-caps text-[10px] uppercase tracking-wider">Deposit</span>
           </Link>
           
-          <Link href="/vault" className="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:text-secondary transition-colors">
+          <Link href="/vault" className="flex flex-col items-center justify-center text-on-surface-variant p-3 min-w-[64px] hover:text-secondary transition-colors">
             <Lock className="h-5 w-5 mb-1" />
             <span className="font-label-caps text-[10px] uppercase tracking-wider">Vault</span>
           </Link>
           
-          <Link href="/streak" className="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:text-secondary transition-colors">
+          <Link href="/streak" className="flex flex-col items-center justify-center text-on-surface-variant p-3 min-w-[64px] hover:text-secondary transition-colors">
             <Trophy className="h-5 w-5 mb-1" />
             <span className="font-label-caps text-[10px] uppercase tracking-wider">Streak</span>
           </Link>

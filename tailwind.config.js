@@ -54,18 +54,22 @@ module.exports = {
               "on-tertiary-container": "#636560",
               "secondary-fixed": "#4affb5",
               "on-tertiary-fixed": "#1a1c19",
-              "on-error-container": "#ffdad6"
+              "on-error-container": "#ffdad6",
+              "success": "#22c55e",
+              "streak": "#f97316"
       },
       "borderRadius": {
-              "DEFAULT": "0.125rem",
-              "lg": "0.25rem",
-              "xl": "0.5rem",
+              "DEFAULT": "0.375rem",
+              "sm": "0.125rem",
+              "lg": "0.5rem",
+              "xl": "0.75rem",
+              "2xl": "1rem",
               "full": "0.75rem"
       },
       "spacing": {
+              "stack-sm": "8px",
               "stack-md": "16px",
               "stack-lg": "40px",
-              "stack-sm": "8px",
               "unit": "4px",
               "gutter": "24px",
               "container-padding": "32px"
@@ -74,17 +78,22 @@ module.exports = {
               "label-caps": ["Space Grotesk", "sans-serif"],
               "display-xl": ["Space Grotesk", "sans-serif"],
               "headline-md": ["Space Grotesk", "sans-serif"],
+              "headline-lg": ["Space Grotesk", "sans-serif"],
+              "headline-sm": ["Space Grotesk", "sans-serif"],
               "body-lg": ["Manrope", "sans-serif"],
               "body-md": ["Manrope", "sans-serif"],
-              "headline-lg": ["Space Grotesk", "sans-serif"]
+              "body-sm": ["Manrope", "sans-serif"],
+              "body": ["Manrope", "sans-serif"]
       },
       "fontSize": {
               "label-caps": ["12px", { "lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700" }],
-              "display-xl": ["72px", { "lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700" }],
+              "display-xl": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700" }],
+              "headline-lg": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600" }],
               "headline-md": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+              "headline-sm": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
               "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
               "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
-              "headline-lg": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600" }]
+              "body-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }]
       }
     },
   },

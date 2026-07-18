@@ -1,11 +1,13 @@
 'use client';
 
 import { useUserData } from '@/hooks/useVault';
-import { Flame, Trophy, Share2, Award, Zap } from 'lucide-react';
+import { parseUserData } from '@/contracts';
+import { Flame, Trophy, Share2, Award, Zap, CheckCircle2, Lock } from 'lucide-react';
 
 export default function StreakPage() {
   const { data: userData } = useUserData();
-  const currentStreak = (userData as any[])?.[1] ? Number((userData as any[])[1]) : 0;
+  const parsed = parseUserData(userData);
+  const currentStreak = parsed ? Number(parsed.streak) : 0;
 
   // Mock milestones for UI demonstration
   const milestones = [
@@ -30,11 +32,11 @@ export default function StreakPage() {
       </div>
 
       <div className="bg-surface-container border border-surface-variant p-8 rounded-xl shadow-lg flex flex-col items-center justify-center text-center relative overflow-hidden">
-        <div className="absolute top-4 right-4 text-orange-500/20">
+        <div className="absolute top-4 right-4 text-streak/20" aria-hidden="true">
           <Flame className="w-32 h-32" />
         </div>
         
-        <div className={`w-24 h-24 rounded-full flex items-center justify-center mb-6 border-4 ${currentStreak > 0 ? 'bg-orange-500/10 border-orange-500 text-orange-500 shadow-[0_0_30px_rgba(249,115,22,0.3)]' : 'bg-surface-variant border-outline text-on-surface-variant'}`}>
+        <div className={`w-24 h-24 rounded-full flex items-center justify-center mb-6 border-4 ${currentStreak > 0 ? 'bg-streak/10 border-streak text-streak shadow-[0_0_30px_rgba(249,115,22,0.3)]' : 'bg-surface-variant border-outline text-on-surface-variant'}`}>
           <Flame className="w-12 h-12" />
         </div>
         
@@ -43,7 +45,7 @@ export default function StreakPage() {
         </h3>
         
         {currentStreak > 0 ? (
-          <span className="bg-orange-500/20 text-orange-500 border border-orange-500/50 px-4 py-1.5 font-label-caps text-sm rounded-full flex items-center gap-2">
+          <span className="bg-streak/20 text-streak border border-streak/50 px-4 py-1.5 font-label-caps text-sm rounded-full flex items-center gap-2">
             <Zap className="w-4 h-4" />
             Active Streak
           </span>
@@ -100,12 +102,4 @@ export default function StreakPage() {
       </div>
     </main>
   );
-}
-
-// Simple icons not imported above
-function CheckCircle2(props: any) {
-  return <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>;
-}
-function Lock(props: any) {
-  return <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>;
 }
