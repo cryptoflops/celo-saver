@@ -13,10 +13,13 @@ export default function AppKitButton() {
   useEffect(() => setMounted(true), []);
   if (!mounted || isMiniPay) return null;
 
-  const label = isConnected && address ? `${address.slice(0, 6)}...${address.slice(-4)}` : 'Connect';
+  const label = isConnected && address ? `${address.slice(0, 6)}...${address.slice(-4)}` : 'Connect wallet';
 
   return (
-    <button onClick={() => open()} className="btn-primary">
+    <button
+      onClick={() => open()}
+      className="button button--default theme--blue"
+    >
       {label}
     </button>
   );

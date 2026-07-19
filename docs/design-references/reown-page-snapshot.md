@@ -1,0 +1,325 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - link [ref=e3] [cursor=pointer]:
+      - /url: /
+    - navigation [ref=e12]:
+      - list [ref=e13]:
+        - listitem [ref=e14]:
+          - button "Navigation Toggle" [ref=e15] [cursor=pointer]
+    - navigation [ref=e17]:
+      - link "Learn" [ref=e18] [cursor=pointer]:
+        - /url: /learn
+      - link "Docs" [ref=e19] [cursor=pointer]:
+        - /url: https://docs.reown.com/
+      - link "Demo" [ref=e20] [cursor=pointer]:
+        - /url: https://demo.reown.com/
+      - link "Log in" [ref=e21] [cursor=pointer]:
+        - /url: https://cloud.reown.com/sign-in
+  - main [ref=e22]:
+    - generic [ref=e23]:
+      - generic [ref=e30]:
+        - heading "Infrastructure for blockchain app development" [level=1] [ref=e31]
+        - paragraph [ref=e34]: Reown powers secure, user-friendly, insight-rich infrastructure for building blockchain apps — from DeFi and payments to enterprises and institutions.
+        - list [ref=e35]:
+          - listitem [ref=e36]:
+            - link "Start building" [ref=e37] [cursor=pointer]:
+              - /url: https://cloud.reown.com/sign-up
+          - listitem [ref=e38]:
+            - link "Explore Plans" [ref=e39] [cursor=pointer]:
+              - /url: https://reown.com/pricing
+      - generic [ref=e44]:
+        - paragraph [ref=e45]: Our report on the State of DeFi 2026 is available now!
+        - generic [ref=e46]:
+          - list [ref=e47]:
+            - listitem [ref=e48]:
+              - link "Download now" [ref=e49] [cursor=pointer]:
+                - /url: https://reown.com/state-of-defi-2026
+          - button "Close announcement" [ref=e50] [cursor=pointer]
+      - heading "Trusted by" [level=3] [ref=e56]
+      - list [ref=e62]:
+        - listitem [ref=e63]
+        - listitem [ref=e64]
+        - listitem [ref=e65]
+        - listitem [ref=e66]
+        - listitem [ref=e67]
+        - listitem [ref=e68]
+        - listitem [ref=e69]
+        - listitem [ref=e70]
+        - listitem [ref=e71]
+        - listitem [ref=e72]
+        - listitem [ref=e73]
+        - listitem [ref=e74]
+        - listitem [ref=e75]
+        - listitem [ref=e76]
+        - listitem [ref=e77]
+        - listitem [ref=e78]
+        - listitem [ref=e79]
+        - listitem [ref=e80]
+        - listitem [ref=e81]
+        - listitem [ref=e82]
+        - listitem [ref=e83]
+        - listitem [ref=e84]
+        - listitem [ref=e85]
+        - listitem [ref=e86]
+        - listitem [ref=e87]
+        - listitem [ref=e88]
+        - listitem [ref=e89]
+      - heading "Our solutions" [level=3] [ref=e95]
+      - generic [ref=e97]:
+        - generic [ref=e102]:
+          - paragraph [ref=e103]: Authentication
+          - heading "Frictionless Logins, Wallet Creation & Session Management" [level=2] [ref=e104]
+          - paragraph [ref=e107]: Let users connect with trusted wallets across EVM, Solana, Bitcoin and more via WalletConnect. Enable social and email logins, Sign in with Ethereum (SIWE) or Multichain auth (SIWX) with one integration.
+          - list [ref=e108]:
+            - listitem [ref=e109]:
+              - link "Explore Authentication" [ref=e110] [cursor=pointer]:
+                - /url: /solutions/authentication
+        - generic [ref=e115]:
+          - paragraph [ref=e116]: Authentication
+          - heading "Seamless web3 authentication" [level=2] [ref=e117]
+          - paragraph [ref=e120]: Optimize your onboarding for any user. Upgrade your flows with custom UI options and SDKs for every developer stack.
+      - generic [ref=e122]:
+        - generic [ref=e127]:
+          - paragraph [ref=e128]: Payments
+          - heading "Fund wallets and unlock monetization." [level=2] [ref=e129]
+          - generic [ref=e131]:
+            - paragraph [ref=e132]: With Reown, funding wallets is easy. Enable seamless onramps and swaps, or fund in-app wallets with self-custodial or exchange wallets.
+            - paragraph [ref=e133]: Always in-app.
+        - generic [ref=e138]:
+          - paragraph [ref=e139]: Payments
+          - heading "Crypto Payments made easy" [level=2] [ref=e140]
+          - paragraph [ref=e143]: Add fast, simple and compliant crypto payments solutions to your app.Designed to work seamlessly across platforms and frameworks.
+          - list [ref=e144]:
+            - listitem [ref=e145]:
+              - link "Explore Payments" [ref=e146] [cursor=pointer]:
+                - /url: /solutions/payments
+      - generic [ref=e148]:
+        - generic [ref=e153]:
+          - paragraph [ref=e154]: Analytics
+          - heading "Insights That Fuel Growth" [level=2] [ref=e155]
+          - paragraph [ref=e158]: Get visibility into sessions, drop-offs, wallets, chains, and user behavior. Access unique, proprietary data to help you fine-tune onboarding, retention, and monetization.
+          - list [ref=e159]:
+            - listitem [ref=e160]:
+              - link "Explore Analytics" [ref=e161] [cursor=pointer]:
+                - /url: /solutions/analytics
+        - generic [ref=e166]:
+          - paragraph [ref=e167]: Analytics
+          - heading "Make data-driven decisions" [level=2] [ref=e168]
+          - paragraph [ref=e171]: Dive into app performance, user insights, technical metrics and more.
+      - generic [ref=e173]:
+        - generic [ref=e178]:
+          - heading "Multichain Apps, Simplified" [level=2] [ref=e179]
+          - paragraph [ref=e182]: Unlock powerful multichain interactions in your app across all EVM networks, Solana, Tron and Bitcoin.One integration, all chains.
+        - generic [ref=e187]:
+          - heading "Multichain tools" [level=2] [ref=e188]
+          - paragraph [ref=e191]: Discover Multichain auth, multichain support & seamless multiwallet linking.
+      - heading "Build any onchain app" [level=3] [ref=e197]
+      - generic [ref=e201]:
+        - generic [ref=e205]:
+          - heading "DeFi" [level=2] [ref=e206]
+          - paragraph [ref=e209]: Create powerful DeFi apps, from prediction markets to Yield aggregators and more.
+          - list [ref=e210]:
+            - listitem [ref=e211]:
+              - link "Learn more" [ref=e212] [cursor=pointer]:
+                - /url: /use-cases/defi
+        - generic [ref=e216]:
+          - heading "Social" [level=2] [ref=e217]
+          - paragraph [ref=e220]: Create web3 social media platforms, onchain by default for crypto native audiences and beyond.
+          - list [ref=e221]:
+            - listitem [ref=e222]:
+              - link "Learn more" [ref=e223] [cursor=pointer]:
+                - /url: /use-cases/social
+        - generic [ref=e227]:
+          - heading "Marketplaces" [level=2] [ref=e228]
+          - paragraph [ref=e231]: Build performant onchain marketplaces; sell NFTs, tokens or RWAs with minimal effort.
+          - list [ref=e232]:
+            - listitem [ref=e233]:
+              - link "Learn more" [ref=e234] [cursor=pointer]:
+                - /url: /use-cases/marketplaces
+        - generic [ref=e238]:
+          - heading "Games" [level=2] [ref=e239]
+          - paragraph [ref=e242]: Make impressive blockchain games from simple trading card games to complex virtual worlds.
+          - list [ref=e243]:
+            - listitem [ref=e244]:
+              - link "Learn more" [ref=e245] [cursor=pointer]:
+                - /url: /use-cases/gaming
+      - generic [ref=e250]:
+        - heading "Reown is powered by WalletConnect, the connectivity layer for the financial internet." [level=1] [ref=e252]
+        - paragraph [ref=e255]: Essential decentralized infrastructure moving billions in value annually. Powered by 20+ world class node operators, 700+ wallets, 70K apps and millions of users.
+        - list [ref=e256]:
+          - listitem [ref=e257]:
+            - link "Learn More" [ref=e258] [cursor=pointer]:
+              - /url: https://walletconnect.network/
+      - generic [ref=e263]:
+        - heading "Articles" [level=2] [ref=e264]
+        - list [ref=e265]:
+          - listitem [ref=e266]:
+            - generic [ref=e267]:
+              - generic [ref=e269]:
+                - generic [ref=e270]:
+                  - time [ref=e271]: 08.19.2025
+                  - paragraph [ref=e272]: Case Study
+                - link "How Morpho & Quickswap Used Reown to Provide a Seamless DeFi UX" [ref=e273] [cursor=pointer]:
+                  - /url: /blog/how-defi-teams-are-scaling-faster-with-reown
+                  - heading "How Morpho & Quickswap Used Reown to Provide a Seamless DeFi UX" [level=3] [ref=e274]
+                - link [ref=e275] [cursor=pointer]:
+                  - /url: /blog/how-defi-teams-are-scaling-faster-with-reown
+              - link [ref=e279] [cursor=pointer]:
+                - /url: /blog/how-defi-teams-are-scaling-faster-with-reown
+          - listitem [ref=e280]:
+            - generic [ref=e281]:
+              - generic [ref=e283]:
+                - generic [ref=e284]:
+                  - time [ref=e285]: 05.29.2025
+                  - paragraph [ref=e286]: Case Study, Product Updates
+                - link "How Reown's AppKit helps DeFi apps unlock smoother UX and Stronger Growth" [ref=e287] [cursor=pointer]:
+                  - /url: /blog/how-reown-s-appkit-helps-defi-apps-unlock-smoother-ux-and-stronger-growth
+                  - heading "How Reown's AppKit helps DeFi apps unlock smoother UX and Stronger Growth" [level=3] [ref=e288]
+                - link [ref=e289] [cursor=pointer]:
+                  - /url: /blog/how-reown-s-appkit-helps-defi-apps-unlock-smoother-ux-and-stronger-growth
+              - link [ref=e293] [cursor=pointer]:
+                - /url: /blog/how-reown-s-appkit-helps-defi-apps-unlock-smoother-ux-and-stronger-growth
+          - listitem [ref=e294]:
+            - generic [ref=e295]:
+              - generic [ref=e297]:
+                - generic [ref=e298]:
+                  - time [ref=e299]: 01.27.2026
+                  - paragraph [ref=e300]: Product Updates
+                - 'link "Reown Analytics: Everything you need to know" [ref=e301] [cursor=pointer]':
+                  - /url: /blog/why-choose-reown-for-web3-app-analytics
+                  - 'heading "Reown Analytics: Everything you need to know" [level=3] [ref=e302]'
+                - link [ref=e303] [cursor=pointer]:
+                  - /url: /blog/why-choose-reown-for-web3-app-analytics
+              - link [ref=e307] [cursor=pointer]:
+                - /url: /blog/why-choose-reown-for-web3-app-analytics
+        - link "More articles" [ref=e309] [cursor=pointer]:
+          - /url: /blog
+      - generic [ref=e326]:
+        - heading "Powering the future of the financial internet" [level=2] [ref=e329]
+        - generic [ref=e331]:
+          - paragraph [ref=e334]: Join us in building secure, user-friendly, and insight rich infrastructure for onchain finance.
+          - list [ref=e335]:
+            - listitem [ref=e336]:
+              - link "Start building" [ref=e337] [cursor=pointer]:
+                - /url: https://cloud.reown.com/sign-up
+            - listitem [ref=e338]:
+              - button "Contact sales" [ref=e339] [cursor=pointer]
+  - contentinfo [ref=e340]:
+    - generic [ref=e343]:
+      - paragraph [ref=e346]: Subscribe to our newsletter.
+      - paragraph [ref=e349]:
+        - text: You can unsubscribe at any time. Our Privacy Policy is available
+        - link "here" [ref=e350] [cursor=pointer]:
+          - /url: /privacy-policy
+        - text: .
+      - generic [ref=e352]:
+        - textbox [ref=e355]:
+          - /placeholder: Mail
+        - button [ref=e488] [cursor=pointer]
+    - list [ref=e360]:
+      - listitem [ref=e361]:
+        - link [ref=e362] [cursor=pointer]:
+          - /url: reown-sdk
+    - generic [ref=e366]:
+      - generic [ref=e367]:
+        - paragraph [ref=e368]: Developers
+        - list [ref=e370]:
+          - listitem [ref=e371]:
+            - link "Dashboard" [ref=e373] [cursor=pointer]:
+              - /url: https://dashboard.reown.com/
+          - listitem [ref=e374]:
+            - link "Docs" [ref=e376] [cursor=pointer]:
+              - /url: https://docs.reown.com/
+          - listitem [ref=e377]:
+            - link "Learn" [ref=e379] [cursor=pointer]:
+              - /url: /learn
+          - listitem [ref=e380]:
+            - link "GitHub" [ref=e382] [cursor=pointer]:
+              - /url: http://github.com/reown-com
+          - listitem [ref=e383]:
+            - link "Status" [ref=e385] [cursor=pointer]:
+              - /url: https://status.reown.com/
+          - listitem [ref=e386]:
+            - link "Bug Bounty" [ref=e388] [cursor=pointer]:
+              - /url: /security
+          - listitem [ref=e389]:
+            - link "FAQ" [ref=e391] [cursor=pointer]:
+              - /url: /faq
+      - generic [ref=e392]:
+        - paragraph [ref=e393]: Solutions & Use Cases
+        - list [ref=e395]:
+          - listitem [ref=e396]:
+            - link "Analytics" [ref=e398] [cursor=pointer]:
+              - /url: /solutions/analytics
+          - listitem [ref=e399]:
+            - link "Authentication" [ref=e401] [cursor=pointer]:
+              - /url: /solutions/authentication
+          - listitem [ref=e402]:
+            - link "Payments" [ref=e404] [cursor=pointer]:
+              - /url: /solutions/payments
+          - listitem [ref=e405]:
+            - link "Compliance" [ref=e407] [cursor=pointer]:
+              - /url: /solutions/compliance
+          - listitem [ref=e408]:
+            - link "DeFi" [ref=e410] [cursor=pointer]:
+              - /url: /use-cases/defi
+          - listitem [ref=e411]:
+            - link "Gaming" [ref=e413] [cursor=pointer]:
+              - /url: /use-cases/gaming
+          - listitem [ref=e414]:
+            - link "Marketplaces" [ref=e416] [cursor=pointer]:
+              - /url: /use-cases/marketplaces
+          - listitem [ref=e417]:
+            - link "Social" [ref=e419] [cursor=pointer]:
+              - /url: /use-cases/social
+      - list [ref=e422]:
+        - listitem [ref=e423]:
+          - link "Terms of Service" [ref=e425] [cursor=pointer]:
+            - /url: /terms-of-service
+        - listitem [ref=e426]:
+          - link "Privacy Policy" [ref=e428] [cursor=pointer]:
+            - /url: /privacy-policy
+        - listitem [ref=e429]:
+          - link "Cookie Policy" [ref=e431] [cursor=pointer]:
+            - /url: /cookie-policy
+    - generic [ref=e434]:
+      - paragraph [ref=e435]: Connect
+      - list [ref=e437]:
+        - listitem [ref=e438]:
+          - link "X (Twitter)" [ref=e440] [cursor=pointer]:
+            - /url: https://x.com/reown_
+        - listitem [ref=e441]:
+          - link "LinkedIn" [ref=e443] [cursor=pointer]:
+            - /url: https://www.linkedin.com/company/re-own
+        - listitem [ref=e444]:
+          - link "YouTube" [ref=e446] [cursor=pointer]:
+            - /url: https://www.youtube.com/@re_own
+        - listitem [ref=e447]:
+          - link "Farcaster" [ref=e449] [cursor=pointer]:
+            - /url: https://farcaster.xyz/reown
+    - generic [ref=e451]:
+      - generic [ref=e452]:
+        - paragraph [ref=e453]: Company
+        - list [ref=e455]:
+          - listitem [ref=e456]:
+            - link "About Us" [ref=e458] [cursor=pointer]:
+              - /url: /about-reown
+          - listitem [ref=e459]:
+            - link "Pricing" [ref=e461] [cursor=pointer]:
+              - /url: https://reown.com/pricing
+          - listitem [ref=e462]:
+            - link "Blog" [ref=e464] [cursor=pointer]:
+              - /url: /blog
+          - listitem [ref=e465]:
+            - link "Careers" [ref=e467] [cursor=pointer]:
+              - /url: /careers
+          - listitem [ref=e468]:
+            - link "Media Kit" [ref=e470] [cursor=pointer]:
+              - /url: https://drive.google.com/drive/folders/1CnhBzy82qcEYSu0cBafk-NWatLjTaCW5?usp=drive_link
+          - listitem [ref=e471]:
+            - link "Contact" [ref=e473] [cursor=pointer]:
+              - /url: /contact
+          - listitem
+      - paragraph [ref=e474]: © 2026 reown inc.
+    - generic "reown" [ref=e476]
+  - alert [ref=e484]

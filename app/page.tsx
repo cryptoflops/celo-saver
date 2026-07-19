@@ -1,116 +1,101 @@
 'use client';
 
-import { SUPPORTED_TOKEN, parseUserData } from '@/contracts';
-import { useUserData } from '@/hooks/useVault';
-import { useAccount } from 'wagmi';
-import AppKitButton from '@/components/AppKitButton';
-import Link from 'next/link';
-import { ArrowRight, Flame, Target, TrendingUp, Wallet } from 'lucide-react';
+import ScrollReveal from '@/components/ScrollReveal';
+import DoubleBezelCard from '@/components/DoubleBezelCard';
+import MagneticButton from '@/components/MagneticButton';
+import TrustModule from '@/components/TrustModule';
 
 export default function Home() {
-  const { isConnected } = useAccount();
-  const { data: userData } = useUserData();
-  const parsed = parseUserData(userData);
-
-  const currentStreak = parsed ? Number(parsed.streak) : 0;
-  const vaultBalance = parsed ? Number(parsed.balance) / 1e18 : 0;
-
-  // Mock savings goal
-  const savingsGoal = 500;
-  const goalProgress = Math.min(100, (vaultBalance / savingsGoal) * 100);
-  
-  // Yield projection (mock 12.4% APY, 1.5x streak multiplier)
-  const currentMultiplier = currentStreak >= 7 ? 1.5 : 1.0;
-  const baseYield = vaultBalance * 0.124;
-  const projectedMonthly = (baseYield * currentMultiplier) / 12;
-
   return (
-    <main className="relative z-10 w-full max-w-7xl mx-auto px-container-padding py-stack-lg flex flex-col gap-6">
-      
-      {/* Balance Overview */}
-      <section className="flex flex-col items-center justify-center py-8">
-        <h2 className="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest mb-stack-sm flex items-center gap-2">
-          <Wallet className="w-4 h-4" />
-          Total Savings
-        </h2>
-        <div className="relative">
-          <h1 className="font-display-xl text-display-xl text-primary text-center">
-            <span className="text-secondary">$</span>{vaultBalance > 0 ? vaultBalance.toFixed(2) : '0.00'}
-          </h1>
-          <div className="absolute -right-12 -top-4 w-16 h-16 bg-primary-container rounded-full blur-[40px] opacity-20"></div>
-        </div>
-        <div className="mt-stack-md flex gap-4">
-          <span className="bg-secondary-container/10 text-secondary border border-secondary/30 px-3 py-1 font-label-caps text-label-caps rounded-DEFAULT flex items-center gap-2">
-            <TrendingUp className="w-4 h-4" />
-            +12.4% APY
-          </span>
-          <span className="bg-surface-variant text-on-surface-variant px-3 py-1 font-label-caps text-label-caps rounded-DEFAULT border border-outline-variant">
-            {SUPPORTED_TOKEN.symbol}
-          </span>
-        </div>
-        {!isConnected && (
-          <div className="mt-8 flex justify-center">
-            <AppKitButton />
-          </div>
-        )}
-      </section>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {/* Streak Quick View */}
-        <Link href="/streak" className="block group">
-          <div className="bg-surface-container border border-surface-variant p-6 rounded-xl shadow-lg flex items-center gap-4 transition-colors hover:bg-surface-container-high h-full">
-            <div className={`w-16 h-16 rounded-full flex items-center justify-center shadow-inner ${currentStreak > 0 ? 'bg-streak/20 text-streak border border-streak/30' : 'bg-surface-variant text-on-surface-variant border border-outline'}`}>
-              <Flame className="w-8 h-8" />
-            </div>
-            <div className="flex-1">
-              <h3 className="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest mb-1">Active Streak</h3>
-              <div className="font-headline-lg text-primary">
-                {currentStreak} <span className="text-body-md text-on-surface-variant font-normal">Days</span>
-              </div>
-              <p className="text-xs text-streak mt-1 font-medium">{currentMultiplier}x Yield Multiplier</p>
-            </div>
-            <ArrowRight className="w-5 h-5 text-on-surface-variant group-hover:text-primary transition-transform group-hover:translate-x-1" />
-          </div>
-        </Link>
-
-        {/* Goal Widget */}
-        <div className="bg-surface-container border border-surface-variant p-6 rounded-xl shadow-lg flex flex-col justify-center h-full">
-          <div className="flex justify-between items-end mb-4">
-            <div>
-              <h3 className="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest flex items-center gap-2 mb-1">
-                <Target className="w-4 h-4" />
-                Emergency Fund
-              </h3>
-              <div className="font-headline-sm text-primary">
-                ${vaultBalance.toFixed(0)} <span className="text-body-sm text-on-surface-variant">/ ${savingsGoal}</span>
-              </div>
-            </div>
-            <span className="font-headline-sm text-secondary">{goalProgress.toFixed(0)}%</span>
-          </div>
-          <div className="w-full h-3 bg-surface-variant rounded-full overflow-hidden">
-            <div 
-              className="h-full bg-secondary transition-all duration-1000 ease-out"
-              style={{ width: `${goalProgress}%` }}
-            ></div>
-          </div>
-        </div>
+    <div className="min-h-dvh bg-[#050505]">
+      {/* Subtle background glow */}
+      <div className="fixed inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] bg-[#0988F0]/10 rounded-full blur-[120px]" />
+        <div className="absolute bottom-[-20%] right-[-10%] w-[50%] h-[50%] bg-[#379DEF]/5 rounded-full blur-[100px]" />
       </div>
 
-      {/* Yield Projection */}
-      <div className="bg-surface-container-low border border-outline-variant p-6 rounded-xl flex flex-col sm:flex-row items-center justify-between gap-6 relative overflow-hidden mt-2">
-        <div className="absolute left-0 top-0 w-2 h-full bg-gradient-to-b from-primary-container to-secondary"></div>
-        <div className="pl-4">
-          <h3 className="font-headline-sm text-primary mb-1">Your Money is Working</h3>
-          <p className="font-body-sm text-on-surface-variant max-w-sm">
-            At your current streak multiplier, you're projected to earn <strong className="text-secondary">+${projectedMonthly.toFixed(2)}</strong> this month.
-          </p>
-        </div>
-        <Link href="/deposit" className="w-full sm:w-auto bg-primary-container text-on-primary-container font-label-caps px-6 py-3 rounded-lg flex items-center justify-center gap-2 hover:bg-[#c4dc30] transition-colors shadow-md shrink-0">
-          Deposit More
-          <ArrowRight className="w-4 h-4" />
-        </Link>
-      </div>
+      <div className="relative z-10 max-w-6xl mx-auto px-6 pt-32 pb-24">
+        {/* Hero */}
+        <ScrollReveal>
+          <section className="text-center max-w-3xl mx-auto">
+            <span className="inline-flex px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] uppercase tracking-[0.2em] font-medium text-white/50 mb-6">
+              Save-to-earn on Celo MiniPay
+            </span>
+            <h1 className="font-sans text-4xl md:text-6xl lg:text-7xl text-white tracking-tight leading-[1.05] font-[400]">
+              Your savings,{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#379DEF] via-[#0988F0] to-[#379DEF]/60">
+                building on-chain
+              </span>
+            </h1>
+            <p className="font-sans text-[15px] md:text-[17px] text-white/40 max-w-xl mx-auto mt-6 leading-relaxed">
+              Deposit stablecoins, earn yield, and unlock higher returns the longer you save.
+              Built on Celo and powered by Reown — no gas fees, no surprises.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
+              <MagneticButton href="/dashboard" arrow>Start saving</MagneticButton>
+              <MagneticButton href="/how-it-works" variant="outline">How it works</MagneticButton>
+            </div>
+          </section>
+        </ScrollReveal>
 
-    </main>
+        {/* Trusted by / Stats */}
+        <ScrollReveal delay={100}>
+          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16 mt-24 opacity-40">
+            {['Celo', 'MiniPay', 'Reown', 'WalletConnect'].map((name) => (
+              <span key={name} className="font-mono text-xs tracking-[0.15em] text-white/60 uppercase">{name}</span>
+            ))}
+          </div>
+        </ScrollReveal>
+
+        {/* How it works preview */}
+        <ScrollReveal delay={200}>
+          <section className="mt-32">
+            <div className="text-center mb-16">
+              <span className="inline-flex px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] uppercase tracking-[0.2em] font-medium text-white/50 mb-4">
+                How it works
+              </span>
+              <h2 className="font-sans text-3xl md:text-4xl text-white tracking-tight">Save. Earn. Grow.</h2>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {[
+                { step: '01', title: 'Deposit', desc: 'Connect your wallet and deposit cUSD or cEUR into the vault. No minimums, no lock-ups.' },
+                { step: '02', title: 'Earn yield', desc: 'Your deposited funds generate returns through proven DeFi strategies. APY is updated weekly.' },
+                { step: '03', title: 'Build streaks', desc: 'The longer you save without skipping, the higher your yield multiplier grows — up to 3x.' },
+              ].map((item) => (
+                <DoubleBezelCard key={item.step}>
+                  <div className="p-8">
+                    <span className="font-mono text-[11px] tracking-[0.15em] text-[#379DEF]">{item.step}</span>
+                    <h3 className="font-sans text-xl text-white mt-3 mb-3">{item.title}</h3>
+                    <p className="font-sans text-[14px] text-white/40 leading-relaxed">{item.desc}</p>
+                  </div>
+                </DoubleBezelCard>
+              ))}
+            </div>
+          </section>
+        </ScrollReveal>
+
+        {/* Trust Module */}
+        <TrustModule
+          items={[
+            { label: 'Non-custodial', description: 'You retain full control of your funds at all times. The vault contract manages yield strategies.', icon: 'key' },
+            { label: 'Audited contracts', description: 'All smart contracts are audited by third-party security firms. Reports are publicly available.', icon: 'audit' },
+            { label: 'Celo ecosystem', description: 'Built on Celo — a carbon-negative, mobile-first blockchain with near-zero transaction fees.', icon: 'globe' },
+          ]}
+        />
+
+        {/* Final CTA */}
+        <ScrollReveal delay={100}>
+          <section className="text-center py-24">
+            <h2 className="font-sans text-3xl md:text-4xl text-white tracking-tight mb-4">
+              Ready to start saving?
+            </h2>
+            <p className="font-sans text-[15px] text-white/40 max-w-md mx-auto mb-8">
+              Connect your MiniPay or any wallet and make your first deposit in under a minute.
+            </p>
+            <MagneticButton href="/dashboard" arrow>Open app</MagneticButton>
+          </section>
+        </ScrollReveal>
+      </div>
+    </div>
   );
 }
