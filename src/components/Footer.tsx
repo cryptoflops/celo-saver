@@ -30,7 +30,7 @@ export default function Footer() {
             <ul className="space-y-2">
               <li><a href="https://github.com/cryptoflops/celo-saver" target="_blank" rel="noopener noreferrer" className="font-sans text-[13px] text-white/50 hover:text-white transition-colors">GitHub</a></li>
               <li><a href="https://docs.celo.org" target="_blank" rel="noopener noreferrer" className="font-sans text-[13px] text-white/50 hover:text-white transition-colors">Celo docs</a></li>
-              <li><a href="https://reown.com" target="_blank" rel="noopener noreferrer" className="font-sans text-[13px] text-white/50 hover:text-white transition-colors">Reown</a></li>
+              <li><a href="https://celo.org" target="_blank" rel="noopener noreferrer" className="font-sans text-[13px] text-white/50 hover:text-white transition-colors">Celo</a></li>
             </ul>
           </div>
           <div>
@@ -42,7 +42,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="font-sans text-[12px] text-white/20">© 2026 CeloSaver. Built on Celo with Reown AppKit.</p>
+          <p className="font-sans text-[12px] text-white/20">© 2026 CeloSaver. Built on Celo.</p>
         </div>
       </div>
     </footer>
