@@ -43,7 +43,7 @@ export default function AppHeader() {
           href="/"
           className="button button--large theme--blue hidden md:inline-flex hover:scale-[1.03] active:scale-[0.97]"
         >
-          Home
+          Site
         </Link>
       </nav>
     </header>
