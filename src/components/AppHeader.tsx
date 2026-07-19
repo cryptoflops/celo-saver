@@ -1,10 +1,39 @@
 'use client';
 
+import { useCallback, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useAppKit, useAppKitAccount, useDisconnect } from '@reown/appkit/react';
 
 export default function AppHeader() {
   const pathname = usePathname();
+  const { open } = useAppKit();
+  const { address, isConnected } = useAppKitAccount();
+  const { disconnect } = useDisconnect();
+
+  const clickCount = useRef(0);
+  const clickTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const handleWalletClick = useCallback(() => {
+    if (!isConnected) {
+      open();
+      return;
+    }
+
+    clickCount.current += 1;
+
+    if (clickTimer.current) clearTimeout(clickTimer.current);
+
+    if (clickCount.current >= 3) {
+      clickCount.current = 0;
+      disconnect();
+      return;
+    }
+
+    clickTimer.current = setTimeout(() => {
+      clickCount.current = 0;
+    }, 600);
+  }, [isConnected, open, disconnect]);
 
   const links = [
     { href: '/dashboard', label: 'Dashboard' },
@@ -12,6 +41,10 @@ export default function AppHeader() {
     { href: '/vault', label: 'Vault' },
     { href: '/streak', label: 'Streak' },
   ];
+
+  const walletLabel = isConnected && address
+    ? `${address.slice(0, 6)}...${address.slice(-4)}`
+    : 'Connect wallet';
 
   return (
     <header className="fixed top-0 left-0 right-0 z-[1000] flex justify-center pt-4 px-4">
@@ -24,7 +57,6 @@ export default function AppHeader() {
           <span className="font-mono text-nav-mono text-white">CELOSAVER</span>
         </Link>
 
-        {/* Desktop: reown-style pill buttons */}
         <div className="hidden md:flex items-center gap-1.5">
           {links.map((link) => (
             <Link
@@ -39,12 +71,13 @@ export default function AppHeader() {
           ))}
         </div>
 
-        <Link
-          href="/"
-          className="button button--large theme--blue hidden md:inline-flex hover:scale-[1.03] active:scale-[0.97]"
+        <button
+          onClick={handleWalletClick}
+          className={`button button--large hover:scale-[1.03] active:scale-[0.97] ${isConnected ? 'theme--white' : 'theme--blue'}`}
+          title={isConnected ? 'Triple-click to disconnect' : 'Connect wallet'}
         >
-          Site
-        </Link>
+          {walletLabel}
+        </button>
       </nav>
     </header>
   );
