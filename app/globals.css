@@ -54,6 +54,10 @@
     transform: scale(0.97);
   }
 
+  .button:hover:active {
+    transform: scale(0.97) !important;
+  }
+
   .button--large {
     font-size: 22px;
     letter-spacing: -0.05em;

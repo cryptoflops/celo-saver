@@ -30,7 +30,7 @@ export default function AppHeader() {
             <Link
               key={link.href}
               href={link.href}
-              className={`button button--large ${
+              className={`button button--large hover:scale-[1.03] active:scale-[0.97] ${
                 pathname === link.href ? 'theme--white' : 'theme--blue'
               }`}
             >
@@ -41,7 +41,7 @@ export default function AppHeader() {
 
         <Link
           href="/"
-          className="button button--large theme--blue hidden md:inline-flex"
+          className="button button--large theme--blue hidden md:inline-flex hover:scale-[1.03] active:scale-[0.97]"
         >
           Home
         </Link>

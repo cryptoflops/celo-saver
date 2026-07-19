@@ -31,14 +31,14 @@ export default function PublicHeader() {
             <Link
               key={link.href}
               href={link.href}
-              className="button button--large theme--blue"
+              className="button button--large theme--blue hover:scale-[1.03] active:scale-[0.97]"
             >
               {link.label}
             </Link>
           ))}
           <Link
             href="/dashboard"
-            className="button button--large theme--white ml-1"
+            className="button button--large theme--white ml-1 hover:scale-[1.03] active:scale-[0.97]"
           >
             Open app
           </Link>
@@ -69,7 +69,7 @@ export default function PublicHeader() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setMenuOpen(false)}
-                className="button button--large !text-[18px] theme--blue"
+                className="button button--large !text-[18px] theme--blue hover:scale-[1.03] active:scale-[0.97]"
               >
                 {link.label}
               </Link>
@@ -78,7 +78,7 @@ export default function PublicHeader() {
               <Link
                 href="/dashboard"
                 onClick={() => setMenuOpen(false)}
-                className="button button--large theme--white"
+                className="button button--large theme--white hover:scale-[1.03] active:scale-[0.97]"
               >
                 Open app
               </Link>
