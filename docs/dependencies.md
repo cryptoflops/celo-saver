@@ -4,9 +4,9 @@ Updated: 2026-07-27
 
 ## Core
 - ethers: ^6.11.0 (Celo L2 compatible)
-- viem: ^2.9.0 (alternative provider)
+- viem: ^2.12.0 (alternative provider)
 
 ## Notes
 - Pinned ethers for Celo fee currency compatibility
 
-Audit: zxm6u93y
+Audit: xwk4k87q
