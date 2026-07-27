@@ -7,6 +7,6 @@ Updated: 2026-07-27
 - viem: ^2.9.0 (alternative provider)
 
 ## Notes
-- Next.js App Router for better streaming SSR
+- Pinned ethers for Celo fee currency compatibility
 
-Audit: 9y83qprr
+Audit: zxm6u93y
