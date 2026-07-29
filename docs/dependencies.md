@@ -1,12 +1,12 @@
 # Dependency Decisions
 
-Updated: 2026-07-27
+Updated: 2026-07-29
 
 ## Core
-- ethers: ^6.13.0 (Celo L2 compatible)
+- ethers: ^6.12.1 (Celo L2 compatible)
 - viem: ^2.12.0 (alternative provider)
 
 ## Notes
-- Next.js App Router for better streaming SSR
+- Pinned ethers for Celo fee currency compatibility
 
-Audit: hm3ajvid
+Audit: fisei4qg
