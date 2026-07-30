@@ -3,7 +3,7 @@
 ## [Unreleased] - 2026-07-30
 
 ### Changed
-- Improved loading state indicators across UI
+- Optimized RPC batch requests for lower latency
 
 ### Fixed
-- Fixed decimal formatting for cUSD amounts
+- Fixed edge case in balance display for micro amounts
