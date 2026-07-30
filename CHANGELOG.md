@@ -3,7 +3,7 @@
 ## [Unreleased] - 2026-07-30
 
 ### Changed
-- Improved error handling in contract interactions
+- Improved loading state indicators across UI
 
 ### Fixed
 - Fixed decimal formatting for cUSD amounts
