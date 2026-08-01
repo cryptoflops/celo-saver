@@ -3,7 +3,7 @@
 ## [Unreleased] - 2026-08-01
 
 ### Changed
-- Refactored wallet connection flow for MiniPay
+- Enhanced mobile responsiveness on smaller screens
 
 ### Fixed
-- Fixed decimal formatting for cUSD amounts
+- Corrected gas estimation for Celo L2 calls
