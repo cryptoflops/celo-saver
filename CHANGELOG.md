@@ -3,7 +3,7 @@
 ## [Unreleased] - 2026-08-02
 
 ### Changed
-- Enhanced mobile responsiveness on smaller screens
+- Improved error handling in contract interactions
 
 ### Fixed
-- Corrected gas estimation for Celo L2 calls
+- Resolved race condition in wallet state sync
